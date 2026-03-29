@@ -1,0 +1,75 @@
+body {
+    background-color: rgba(154, 231, 240, 0.637);
+}
+
+#profile {
+    width: 60rem;
+    margin: 3rem auto;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(108, 174, 181, 0.716);
+    border-radius: 2rem;
+}
+
+.profile-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    align-items: flex-start;
+}
+
+#profile img.rounded {
+    width: 27rem;
+    height: 27rem;
+    object-fit: cover;
+    display: block;
+    flex-shrink: 0;
+}
+
+.profile-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    height: 20rem;
+    max-width: 30rem;
+    margin-left: 1rem;
+}
+
+#nickname {
+    margin-bottom: 1rem;
+    margin-top: 0;
+}
+
+#library {
+    margin-top: 2rem;
+    max-width: 56rem;
+}
+
+.card {
+    min-width: 56rem;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card .col-md-4 {
+    height: 10rem;
+    overflow: hidden;
+}
+
+#form-change {
+    font-size: larger;
+}
+
+.form-control {
+    height: 2.5rem;
+}
+
+#h1-library {
+    margin: 1rem 0;
+}

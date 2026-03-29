@@ -1,0 +1,31 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/search.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="card-container">
+        <div id="header">
+            <h1>По запросу найдено: "{{ query }}"</h1>
+        </div>
+    {% for game in games %}
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="/media/{{ game.image }}" class="img-fluid rounded-start"
+                        alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h2 class="card-title">{{ game.name }}</h2>
+                            <p class="card-text">{{ game.price }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    </div>
+{% endblock %}

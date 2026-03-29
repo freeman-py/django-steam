@@ -1,0 +1,42 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/game.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="product-card">
+        <div class="row g-4 h-100">
+            <div class="col-8 h-100">
+                <div class="image-wrapper h-100">
+                    <img src="/media/{{ game.image }}"
+                         alt="Metro Exodus"
+                         class="product-image">
+                </div>
+            </div>
+
+            <div class="col-4 h-100">
+                <div class="info-wrapper">
+                    <h1 class="product-title">{{ game.name }}</h1>
+                    <div class="price">{{ game.price }}</div>
+                    <div class="description">
+                        <p>{{ game.description }}</p>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-sm-12">
+                            <a href="{% url 'cart-add' game.id %}">
+                                <button type="button" class="btn btn-cart">В корзину</button>
+                            </a>
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="{% url 'wishlist-add' game.id %}">
+                                <button type="button" class="btn btn-wishlist">В желаемое</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,98 @@
+body {
+    background-color: rgb(204, 243, 254);
+}
+
+#header {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+#card-container {
+    max-width: 70rem;
+    display: flex;
+    flex-direction: column;
+    margin: 2rem auto;
+    gap: 2rem;
+}
+
+.card {
+    width: 70rem;
+    height: 15rem;
+    border: 2px solid rgb(135, 135, 135) !important;
+    background-color: rgb(60, 90, 139);
+}
+
+.card .row {
+    height: 100%;
+}
+
+.card .col-md-4 {
+    width: 30rem;
+    height: 15rem;
+    overflow: hidden;
+    flex: 0 0 30rem;
+}
+
+.card img {
+    width: 30rem;
+    height: 15rem;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card .col-md-8 {
+    flex: 1;
+}
+
+.card-body {
+    position: relative;
+    height: 100%;
+    color: azure;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2rem;
+}
+
+.card-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+}
+
+.button-container {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
+}
+
+.btn-success {
+    width: fit-content;
+}
+
+.btn-success a {
+    text-decoration: none;
+}
+
+.delete-link a {
+    font-size: large;
+    color: rgb(182, 182, 182) !important;
+    text-decoration: none;
+}
+
+.delete-link a:hover {
+    color: #ffffff !important;
+    text-decoration: underline;
+}

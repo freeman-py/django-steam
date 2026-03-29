@@ -1,0 +1,51 @@
+body {
+    background-color: rgb(204, 243, 254);
+}
+
+.register {
+    background-color: whitesmoke;
+    width: 50rem;
+    height: 55rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 5rem auto;
+    border-radius: 0.7rem;
+    gap: 1rem;
+}
+
+#header-register {
+    text-align: center;
+    border-radius: 0.7rem;
+    min-height: 10rem;
+    align-content: center;
+    justify-content: center;
+    margin-top: 0;
+    padding-top: 0;
+    background-color: rgb(200, 200, 200);
+}
+
+.input-div {
+    width: 100%;
+}
+
+#register-btn {
+    width: 100%;
+    min-height: 3rem;
+    margin-top: 1rem;
+}
+
+#footer-register {
+    display: flex;
+    gap: 0.35rem;
+}
+
+.form-control {
+    min-height: 3rem;
+}
+
+.register-form {
+    width: 100%;
+}

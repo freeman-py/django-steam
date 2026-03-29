@@ -1,0 +1,78 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div id="profile">
+
+        {% if messages %}
+
+            <div class="alert alert-success">
+                {% for msg in messages %}
+                    {{ msg }}
+                {% endfor %}
+            </div>
+
+        {% endif %}
+
+        <div class="profile-header">
+            <img src="
+                {% if user.image %}
+                    {{ user.image.url }}
+                {% else %}
+                    {% static 'images/users/unknown_user.avif' %}
+                {% endif %}
+                "
+                class="rounded" alt="IMAGE">
+
+            <div class="profile-info">
+                <h1 id="nickname">Ваши данные</h1>
+
+                <form method="post" action="{% url 'profile' %}" enctype="multipart/form-data" id="form-change">
+                    {% csrf_token %}
+
+                    <div class="mb-3 input-div">
+                        <label for="{{ form.username.id_for_label }}" class="form-label">Login</label>
+                        {{ form.username }}
+                    </div>
+                    <div class="mb-3 input-div">
+                        <label for="{{ form.nickname.id_for_label }}">Nickname</label>
+                        {{ form.nickname }}
+                    </div>
+                    <div class="mb-3 input-div">
+                        <label for="{{ form.email.id_for_label }}">Email address</label>
+                        {{ form.email }}
+                    </div>
+                    <div class="mb-3 input-div">
+                        <label for="{{ form.image.id_for_label }}" class="form-label">Image</label>
+                        {{ form.image }}
+                    </div>
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="library">
+            <h2 id="h1-library">{{ request.user.username }}: БИБЛИОТЕКА</h2>
+            {% for library in libraries %}
+                <div class="card mb-3">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/media/{{ library.game.image }}" class="img-fluid rounded-start"
+                                alt="...">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ library.game.name }}</h5>
+                                <p class="card-text">{{ library.game.description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

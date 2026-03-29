@@ -1,0 +1,97 @@
+body {
+    background-color: rgb(204, 243, 254);
+}
+
+#cart-header {
+    margin: 3rem;
+}
+
+#catalog {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0rem auto;
+    margin-top: 5rem;
+    width: 60rem;
+    max-width: 60rem;
+    gap: 2rem;
+}
+
+.card {
+    min-width: 56rem;
+    border: 2px solid rgb(135, 135, 135) !important;
+    background-color: rgb(8, 38, 85);
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.card .col-md-4 {
+    height: 12.5rem;
+    overflow: hidden;
+}
+
+.card-body {
+    position: relative;
+    height: 100%;
+    min-height: 12.5rem;
+    color: azure;
+    border: 2px solid rgb(135, 135, 135);
+    border-top: none;
+    border-right: none;
+    border-bottom: none;
+}
+
+.card-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 2rem;
+}
+
+.card-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+}
+
+.delete-link a {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 2rem;
+    font-size: large;
+    color: rgb(182, 182, 182) !important;
+}
+
+.delete-link a:hover {
+    color: #ffffff !important;
+}
+
+#sum-cart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    width: fit-content;
+}
+
+#sum-cart h2 {
+    margin: 0;
+    color: #333;
+    font-size: 1.5rem;
+}
+
+#sum-cart .btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    padding: 0.75rem 2.5rem;
+    font-size: 1.25rem;
+    color: white;
+    width: 30rem;
+}

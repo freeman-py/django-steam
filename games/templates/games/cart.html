@@ -1,0 +1,54 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}">
+{% endblock %}
+
+{% block content %}
+
+{% if carts %}
+    <div id="cart-container">
+        <div id="cart-header">
+            <h1 id="h1-cart">{{ request.user.username }}</h1>
+            <h3 id="games-counter">ИГР: {{ total_quantity }}</h3>
+        </div>
+
+        <div id="catalog">
+
+            {% for cart in carts %}
+                <div class="card mb-3">
+                <div class="row g-0">
+                    <div class="col-md-4">
+                        <img src="/media/{{ cart.game.image }}" class="img-fluid rounded-start"
+                            alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title">{{ cart.game.name }}</h3>
+                            <p class="card-text">{{ cart.game.price }}</p>
+                            <p class="delete-link"><a href="{% url 'cart-delete' cart.id %}"
+                                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+
+        <div id="sum-cart">
+            <h2>Итого: {{ total_sum }}</h2>
+            <a href="{% url 'add-library' %}">
+                <button type="button" class="btn btn-primary">Оплатить</button>
+            </a>
+        </div>
+    </div>
+{% else %}
+    <h3>
+        Корзина пуста
+    </h3>
+{% endif %}
+
+{% endblock %}

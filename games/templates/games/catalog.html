@@ -1,0 +1,107 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/catalog.css' %}">
+{% endblock %}
+
+
+{% block content %}
+    <h4 id="catalog">CATALOG</h4>
+
+    <div id="category-container">
+
+        <div class="category-div">
+            <h4><a style="color: white; text-decoration: none;" href="{% url 'catalog' %}">Все категории</a></h4>
+        </div>
+
+        {% for category in categories %}
+            <div class="category-div">
+                <h4><a style="color: white; text-decoration: none;" href="{% url 'category' category.id %}" >{{ category.genre }}</a></h4>
+            </div>
+        {% endfor %}
+    </div>
+
+
+    <div class="games-container">
+        {% if games %}
+            {% for game in games %}
+                <div class="card game-card" style="width: 18rem;">
+                    <div class="card-img-container">
+                        <img src="/media/{{ game.image }}"
+                        alt="Game">
+                    </div>
+                    <div class="card-body title" style="background-color: #3498db;">
+                        <h4>
+                            <a style="text-decoration: none; color: white;" href="{% url 'game' game.id %}">{{ game.name }}</a>
+                        </h4>
+                    </div>
+                    <div class="card-body price d-flex justify-content-between align-items-center">
+                        <p class="card-text mb-0 ">{{ game.price }}</p>
+                        <a href="{% url 'cart-add' game.id %}">
+                            <button type="button" class="btn btn-success">В корзину</button>
+                        </a>
+                        <a class="wishlist-link" href="{% url 'wishlist-add' game.id %}">
+                            В желаемое
+                        </a>
+                    </div>
+                </div>
+
+            {% endfor %}
+        <nav aria-label="Page navigation example" id="nav-pagination">
+    <ul class="pagination justify-content-center">
+        <li class="page-item {% if not games.has_previous %} disabled {% endif %}">
+            <a class="page-link"
+               href="
+               {% if games.has_previous %}
+                   {% if category_id %}
+                       {% url 'category_page' category_id games.previous_page_number %}
+                   {% else %}
+                       {% url 'catalog' %}?page={{ games.previous_page_number }}
+                   {% endif %}
+               {% else %}
+                   #
+               {% endif %}">
+                &laquo;
+            </a>
+        </li>
+
+        {% for page in games.paginator.page_range %}
+            <li class="page-item {% if games.number == page %} active {% endif %}">
+                <a class="page-link"
+                   href="
+                   {% if category_id %}
+                       {% url 'category_page' category_id page %}
+                   {% else %}
+                       {% url 'catalog' %}?page={{ page }}
+                   {% endif %}">
+                    {{ page }}
+                </a>
+            </li>
+        {% endfor %}
+
+        <li class="page-item {% if not games.has_next %} disabled {% endif %}">
+            <a class="page-link"
+               href="
+               {% if games.has_next %}
+                   {% if category_id %}
+                       {% url 'category_page' category_id games.next_page_number %}
+                   {% else %}
+                       {% url 'catalog' %}?page={{ games.next_page_number }}
+                   {% endif %}
+               {% else %}
+                   #
+               {% endif %}">
+                &raquo;
+            </a>
+        </li>
+
+    </ul>
+</nav>
+        {% else %}
+            <h4 style="color: white">Games not found</h4>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

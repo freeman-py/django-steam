@@ -1,0 +1,53 @@
+body {
+    background-color: rgb(204, 243, 254);
+}
+
+.login {
+    max-width: 50rem;
+    margin: 5rem auto;
+    min-height: 35rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 0.7rem;
+    background-color: whitesmoke;
+    padding: 0 2rem;
+}
+
+.login-form {
+    width: 100%;
+}
+
+#header-login {
+    height: 8rem;
+    text-align: center;
+    background-color: rgb(200, 200, 200);
+    border-radius: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.input-place {
+    width: 100%;
+}
+
+.form-control {
+    min-height: 3rem;
+}
+
+#authorization-btn {
+    margin-top: 1rem;
+    min-height: 3rem;
+    width: 100%;
+}
+
+#footer-login {
+    display: flex;
+    gap: 0.35rem;
+}

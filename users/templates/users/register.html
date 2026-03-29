@@ -1,0 +1,55 @@
+{% extends 'games/base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/register.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="register">
+
+        {% if form.errors %}
+
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    {% for error in errors %}
+                        <li>{{ error }}</li>
+                    {% endfor %}
+                {% endfor %}
+            </ul>
+
+        {% endif %}
+
+        <form method="post" action="{% url 'register' %}" class="register-form">
+            {% csrf_token %}
+
+            <h1 id="header-register">Регистрация</h1>
+            <div class="mb-3 input-div">
+                <label for="{{ form.username.id_for_label }}">Логин</label>
+                {{ form.username }}
+            </div>
+            <div class="mb-3 input-div">
+                <label for="{{ form.nickname.id_for_label }}">Никнейм</label>
+                {{ form.nickname }}
+            </div>
+            <div class="mb-3 input-div">
+                <label for="{{ form.email.id_for_label }}">Email</label>
+                {{ form.email }}
+            </div>
+            <div class="mb-3 input-div">
+                <label for="{{ form.password1.id_for_label }}">Пароль</label>
+                {{ form.password1 }}
+            </div>
+            <div class="mb-3 input-div">
+                <label for="{{ form.password2.id_for_label }}">Введите пароль еще раз</label>
+                {{ form.password2 }}
+            </div>
+            <button type="submit" class="btn btn-primary" id="register-btn">Зарегистрироваться</button>
+            <div id="footer-register">
+                <p class="link-text">Уже есть аккаунт?</p>
+                <p class="link-text"><a href="{% url 'login' %}" class="link-body-emphasis">Войти.</a></p>
+            </div>
+        </form>
+    </div>
+
+{% endblock %}
