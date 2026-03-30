@@ -9,6 +9,13 @@ body {
     width: 100%;
 }
 
+#non-search {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    width: 100%;
+}
+
 #card-container {
     max-width: 90rem;
     display: flex;

@@ -40,7 +40,7 @@ urlpatterns = [
 
     path('catalog/<int:category_id>/', catalog, name='category'),
 
-    path('catalog/<int:category_id>/page/<int:page>/', catalog, name='category_page'),
+    # path('catalog/<int:category_id>/page/<int:page>/', catalog, name='category_page'),
 
     path('wishlist/', wishlist, name='wishlist'),
     path('wishlist-add/<int:game_id>', wishlist_add, name='wishlist-add'),

@@ -2,8 +2,10 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 from games.models import GameCategory, Game, Cart, Wishlist
+
 
 # Create your views here.
 
@@ -25,6 +27,8 @@ def catalog(request, category_id=None, page=1):
     context = {
         "categories": GameCategory.objects.all()
     }
+
+    page = request.GET.get('page', 1)
 
     if category_id:
         filtered_games = Game.objects.filter(category_id=category_id)
@@ -104,6 +108,7 @@ def wishlist_delete(request, wishlist_id):
 def wishlist_add_cart(request, game_id, wishlist_id):
     cart_add(request, game_id)
     wishlist_delete(request, wishlist_id)
+    # messages.success(request, message='Товар был успешно перенесен в корзину')
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
 

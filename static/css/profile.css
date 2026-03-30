@@ -41,6 +41,10 @@ body {
     margin-top: 0;
 }
 
+#save-btn {
+    min-width: 26rem;
+}
+
 #library {
     margin-top: 2rem;
     max-width: 56rem;

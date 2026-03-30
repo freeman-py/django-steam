@@ -1,0 +1,308 @@
+[
+{
+  "model": "games.gamecategory",
+  "pk": 1,
+  "fields": {
+    "genre": "Хоррор",
+    "description": ""
+  }
+},
+{
+  "model": "games.gamecategory",
+  "pk": 2,
+  "fields": {
+    "genre": "Шутер",
+    "description": ""
+  }
+},
+{
+  "model": "games.gamecategory",
+  "pk": 3,
+  "fields": {
+    "genre": "Симулятор",
+    "description": ""
+  }
+},
+{
+  "model": "games.gamecategory",
+  "pk": 4,
+  "fields": {
+    "genre": "Выживание",
+    "description": ""
+  }
+},
+{
+  "model": "games.gamecategory",
+  "pk": 5,
+  "fields": {
+    "genre": "Головоломка",
+    "description": ""
+  }
+},
+{
+  "model": "games.gamecategory",
+  "pk": 6,
+  "fields": {
+    "genre": "MOBA",
+    "description": ""
+  }
+},
+{
+  "model": "games.game",
+  "pk": 1,
+  "fields": {
+    "name": "S.T.A.L.K.E.R 2",
+    "description": "",
+    "image": "games_images/stalker2.jpeg",
+    "price": "4999.00",
+    "category": 2,
+    "discount": "0"
+  }
+},
+{
+  "model": "games.game",
+  "pk": 2,
+  "fields": {
+    "name": "Metro Exodus",
+    "description": "Metro Exodus — третья часть серии «Metro» от 4A Games (2019 г.), шутер от первого лица с элементами survival horror и стелса, основанный на романах Дмитрия Глуховского.\r\n\r\nСюжет: Артём с отрядом спартанцев покидает московское метро на паровозе «Аврора», чтобы найти пригодное для жизни место. Путешествие через Волгу, Каспий, тайгу и Новосибирск длится год. Герои сражаются с мутантами (упыри, стражи, червяки) и враждебными фракциями (электроборцы, каннибалы, нефтяники).\r\n\r\nГеймплей:\r\n* выживание (управление ресурсами, борьба с радиацией);\r\n* боевая система (модификации оружия);\r\n* стелс-механики;",
+    "image": "games_images/metro-exodus.jfif",
+    "price": "2999.00",
+    "category": 2,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 3,
+  "fields": {
+    "name": "Portal 2",
+    "description": "",
+    "image": "games_images/portal2.jfif",
+    "price": "385.00",
+    "category": 5,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 4,
+  "fields": {
+    "name": "The forest",
+    "description": "",
+    "image": "games_images/the_forest.jfif",
+    "price": "435.00",
+    "category": 4,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 5,
+  "fields": {
+    "name": "Black mesa",
+    "description": "",
+    "image": "games_images/black-mesa.jfif",
+    "price": "710.00",
+    "category": 2,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 6,
+  "fields": {
+    "name": "Euro Truck Simulator 2",
+    "description": "",
+    "image": "games_images/euro_truck2.jfif",
+    "price": "1499.00",
+    "category": 3,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 7,
+  "fields": {
+    "name": "Outlast",
+    "description": "",
+    "image": "games_images/outlast.png",
+    "price": "550.00",
+    "category": 1,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 8,
+  "fields": {
+    "name": "Counter-strike 2",
+    "description": "",
+    "image": "games_images/cs2.jfif",
+    "price": "1299.00",
+    "category": 2,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 9,
+  "fields": {
+    "name": "Dota 2",
+    "description": "",
+    "image": "games_images/dota2.jpg",
+    "price": "999.00",
+    "category": 6,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 10,
+  "fields": {
+    "name": "Half-life 2",
+    "description": "",
+    "image": "games_images/freeman.jpg",
+    "price": "385.00",
+    "category": 2,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 11,
+  "fields": {
+    "name": "Phasmophobia",
+    "description": "",
+    "image": "games_images/Phasmophobia.jfif",
+    "price": "849.00",
+    "category": 1,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 12,
+  "fields": {
+    "name": "Outlast 2",
+    "description": "",
+    "image": "games_images/outlast2.jpg",
+    "price": "710.00",
+    "category": 1,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 13,
+  "fields": {
+    "name": "Satisfactory",
+    "description": "",
+    "image": "games_images/Satisfactory.jfif",
+    "price": "1300.00",
+    "category": 3,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 14,
+  "fields": {
+    "name": "EverSiege: Untold Ages",
+    "description": "",
+    "image": "games_images/EverSiegeUntold_Ages.jpg",
+    "price": "900.00",
+    "category": 6,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 15,
+  "fields": {
+    "name": "ARC Raiders",
+    "description": "",
+    "image": "games_images/ARC_Raiders.jfif",
+    "price": "3220.00",
+    "category": 2,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 16,
+  "fields": {
+    "name": "Escape the Backrooms",
+    "description": "",
+    "image": "games_images/Escape_the_Backrooms.jpg",
+    "price": "399.00",
+    "category": 1,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 17,
+  "fields": {
+    "name": "Sons Of The Forest",
+    "description": "",
+    "image": "games_images/Sons_Of_The_Forest.jfif",
+    "price": "1100.00",
+    "category": 4,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 18,
+  "fields": {
+    "name": "Terraria",
+    "description": "",
+    "image": "games_images/Terraria.jpeg",
+    "price": "385.00",
+    "category": 4,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 19,
+  "fields": {
+    "name": "Portal",
+    "description": "",
+    "image": "games_images/Portal.jpg",
+    "price": "385.00",
+    "category": 5,
+    "discount": null
+  }
+},
+{
+  "model": "games.game",
+  "pk": 20,
+  "fields": {
+    "name": "R.E.P.O.",
+    "description": "",
+    "image": "games_images/R.E.P.O..jpg",
+    "price": "424.00",
+    "category": 1,
+    "discount": null
+  }
+},
+{
+  "model": "games.wishlist",
+  "pk": 6,
+  "fields": {
+    "user": 1,
+    "game": 6,
+    "created_timestamp": "2026-03-30T09:15:29.399Z"
+  }
+},
+{
+  "model": "games.wishlist",
+  "pk": 7,
+  "fields": {
+    "user": 1,
+    "game": 4,
+    "created_timestamp": "2026-03-30T09:15:31.356Z"
+  }
+}
+]

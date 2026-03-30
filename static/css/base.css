@@ -24,13 +24,23 @@ main {
 }
 
 .container.text-left {
-    margin-left: 4rem;
-    margin-top: 1.5rem;
+    display: flex;
+    margin: 1.5rem auto;
 }
 
-#search-games {
-    min-width: 70rem;
-    flex: 1 1 auto;
+.input-group {
+    align-items: stretch;
+}
+
+#search-input,
+#button-addon2 {
+    height: 2.5rem;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+#search-form {
+    min-width: 20rem;
 }
 
 #main-content {

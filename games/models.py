@@ -4,7 +4,7 @@ from django.db import models
 # Модель = таблица БД
 
 class GameCategory(models.Model):
-    genre = models.CharField(max_length=100, unique=True)
+    genre = models.CharField(max_length=70, unique=True)
     description = models.TextField(blank=True)
 
     def __str__(self):
@@ -13,7 +13,7 @@ class GameCategory(models.Model):
 
 class Game(models.Model):
     name = models.CharField(max_length=70)
-    description = models.TextField(blank=True)
+    description = models.TextField(blank=True, max_length=610)
     image = models.ImageField(upload_to='games_images/', blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     # quantity = models.PositiveIntegerField(default=1)  НЕ НУЖНО!!!

@@ -33,7 +33,7 @@ def register(request):
         form = UserRegisterForm(data=request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, message='Your account has been created')
+            messages.success(request, message='Ваш аккаунт был успешно создан')
             return HttpResponseRedirect(reverse('login'))
         else:
             print(form.errors)
@@ -57,7 +57,7 @@ def profile(request):
         form = UserProfileForm(request.POST, instance=request.user, files=request.FILES)
         if form.is_valid():
             form.save()
-            messages.success(request, message='Your data has been successfully updated')
+            messages.success(request, message='Данные были успешно обновлены')
             return HttpResponseRedirect(reverse('profile'))
     else:
         form = UserProfileForm(instance=request.user)
@@ -81,6 +81,9 @@ def add_library(request):
         if cart.game.id not in library_game_ids:
             Library.objects.create(user=request.user, game=cart.game)
             cart.delete()
+            messages.success(request, message='Покупка прошла успешно.')
+        else:
+            messages.warning(request, message='Игры присутствуют в библиотеке.')
 
 
     return HttpResponseRedirect(request.META.get('HTTP_REFERER'))

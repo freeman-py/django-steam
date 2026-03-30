@@ -12,6 +12,7 @@
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
         crossorigin="anonymous"
     >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% block css %} {% endblock %}
@@ -45,14 +46,14 @@
                 {% else %}
                     <button class="nav-item btn btn-light"><a href="{% url 'login' %}" class="nav-link">Войти</a></button>
                 {% endif %}
-                <form method="GET" action="{% url 'search-game' %}">
-                    <div class="input-group" id="search-games">
-                        <input type="text" name="q" class="form-control" placeholder="Search game" aria-describedby="button-addon2">
-                        <button class="nav-item btn btn-light" type="submit">Поиск</button>
+                <form id="search-form" method="GET" action="{% url 'search-game' %}">
+                    <div class="input-group align-items-stretch">
+                        <input id="search-input" type="text" name="q" class="form-control py-2" placeholder="Найти игру..." aria-describedby="button-addon2">
+                        <button class="nav-item btn btn-light d-flex align-items-center" type="submit" id="button-addon2">Поиск</button>
                     </div>
                 </form>
-                <button type="button" class="btn btn-primary" id="cart"><a href="{% url 'cart' %}" class="small-btn">Корзина</a></button>
-                <button type="button" class="btn btn-secondary" id="wishlist"><a href="{% url 'wishlist' %}" class="small-btn">Список желаемого</a></button>
+                <button type="button" class="btn btn-primary" id="cart"><a href="{% url 'cart' %}" class="small-btn"><i class="bi bi-cart2"></i></a></button>
+                <button type="button" class="btn btn-secondary" id="wishlist"><a href="{% url 'wishlist' %}" class="small-btn"><i class="bi bi-star"></i></a></button>
             </div>
         </div>
 
@@ -72,7 +73,7 @@
                 <a href="#"><i class="fab fa-whatsapp"></i></a>
                 <a href="#"><i class="fab fa-vk"></i></a>
             </div>
-            <p class="copyright">&copy; 2024 GameStore. Все права защищены.</p>
+            <p class="copyright">&copy; 2026 GameStore. Все права защищены.</p>
         </div>
     </footer>
 </body>

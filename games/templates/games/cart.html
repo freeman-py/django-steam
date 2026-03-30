@@ -7,12 +7,26 @@
 
 {% block content %}
 
+{% if messages %}
+    {% for msg in messages %}
+        <div style="width: fit-content; display: flex; margin: 2rem auto; justify-content: center;" class="alert alert-{{ msg.tags }} alert-dismissible fade show" role="alert">
+            {{ msg }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    {% endfor %}
+{% endif %}
+
 {% if carts %}
     <div id="cart-container">
-        <div id="cart-header">
+
+        <div style="display: flex; flex-direction: column; margin: 2rem auto; justify-content: center; align-items: center; flex-wrap: wrap;">
             <h1 id="h1-cart">{{ request.user.username }}</h1>
-            <h3 id="games-counter">ИГР: {{ total_quantity }}</h3>
+            <h3 style="margin-bottom: 0;" id="games-counter">ИГР: {{ total_quantity }}</h3>
         </div>
+
+        {% if messages %}
+
+        {% endif %}
 
         <div id="catalog">
 
@@ -25,10 +39,12 @@
                     </div>
                     <div class="col-md-8">
                         <div class="card-body">
-                            <h3 class="card-title">{{ cart.game.name }}</h3>
-                            <p class="card-text">{{ cart.game.price }}</p>
+                            <h2 class="card-title">
+                                <a onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'" style="text-decoration: none; color: white;" href="{% url 'game' cart.game.id %}">{{ cart.game.name }}</a>
+                            </h2>
+                            <p class="card-text">{{ cart.game.price }} руб.</p>
                             <p class="delete-link"><a href="{% url 'cart-delete' cart.id %}"
-                                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Delete</a>
+                                    class="link-secondary link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover">Удалить</a>
                             </p>
                         </div>
                     </div>
@@ -39,16 +55,16 @@
         </div>
 
         <div id="sum-cart">
-            <h2>Итого: {{ total_sum }}</h2>
+            <h2>Итого: {{ total_sum }} руб.</h2>
             <a href="{% url 'add-library' %}">
                 <button type="button" class="btn btn-primary">Оплатить</button>
             </a>
         </div>
     </div>
 {% else %}
-    <h3>
-        Корзина пуста
-    </h3>
+    <div style="display: flex; margin: 2rem auto; justify-content: center;">
+        <h3>Корзина пуста</h3>
+    </div>
 {% endif %}
 
 {% endblock %}

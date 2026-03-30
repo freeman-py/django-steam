@@ -19,13 +19,15 @@ body {
 
 .card {
     width: 70rem;
-    height: 15rem;
+    min-height: 15rem;  /* Изменено с height на min-height */
     border: 2px solid rgb(135, 135, 135) !important;
     background-color: rgb(60, 90, 139);
+    overflow: hidden;  /* Добавлено */
 }
 
 .card .row {
     height: 100%;
+    min-height: 15rem;  /* Добавлено */
 }
 
 .card .col-md-4 {
@@ -36,46 +38,42 @@ body {
 }
 
 .card img {
-    width: 30rem;
-    height: 15rem;
+    width: 100%;  /* Изменено с 30rem на 100% */
+    height: 100%;
     object-fit: cover;
     object-position: center;
 }
 
 .card .col-md-8 {
     flex: 1;
+    overflow: auto;  /* Добавлено, чтобы контент не выпирал */
 }
 
 .card-body {
-    position: relative;
     height: 100%;
     color: azure;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;  /* Добавлено */
+    padding: 1.5rem;  /* Добавлено вместо margin у элементов */
 }
 
+/* Убираем абсолютное позиционирование */
 .card-title {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 2rem;
+    margin: 0 0 1rem 0;  /* Убрал position absolute */
 }
 
 .card-text {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 2rem;
+    margin: 0 0 1rem 0;  /* Убрал position absolute */
+    text-align: right;
 }
 
 .button-container {
-    position: absolute;
-    bottom: 2rem;
-    right: 2rem;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 0.5rem;
+    margin-top: auto;  /* Добавлено */
 }
 
 .btn-success {
@@ -84,6 +82,7 @@ body {
 
 .btn-success a {
     text-decoration: none;
+    color: white;
 }
 
 .delete-link a {

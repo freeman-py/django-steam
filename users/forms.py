@@ -60,21 +60,21 @@ class UserProfileForm(UserChangeForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'readonly': True,
         'class': 'form-control'
-    }))
+    }), required=False)
 
     nickname = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Input nickname'
+        'placeholder': 'Введите никнейм'
     }))
 
     email = forms.EmailField(widget=forms.EmailInput(attrs={
         'readonly': True,
         'class': 'form-control'
-    }))
+    }), required=False)
 
     image = forms.ImageField(widget=forms.FileInput(attrs={
         'class': 'form-control',
-        'placeholder': 'Choose image'
+        'placeholder': 'Выберите аватарку'
     }), required=False)
 
     class Meta:

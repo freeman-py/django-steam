@@ -9,22 +9,41 @@
 
 {% if wishlists %}
     <div id="card-container">
+
+<!--        {% if messages %}-->
+
+<!--            <div class="alert alert-success">-->
+<!--                {% for msg in messages %}-->
+<!--                    {{ msg }}-->
+<!--                {% endfor %}-->
+<!--            </div>-->
+
+<!--        {% endif %}-->
+
         <div id="header">
             <h2>{{ request.user.username }}: СПИСОК ЖЕЛАЕМОГО</h2>
         </div>
         {% for wishlist in wishlists %}
             <div class="card custom-card mb-3">
                 <div class="row g-0 h-100">
-                    <div class="col-md-4 image-col">
+                    <div class="col-md-4 image-col" style="">
                         <img src="/media/{{ wishlist.game.image }}"
-                            class="img-fluid rounded-start card-img" alt="...">
+                            class="img-fluid rounded-start"
+                            style="width: 100%; height: 100%; object-fit: cover;"
+                            alt="{{ wishlist.game.name }}">
                     </div>
                     <div class="col-md-8 content-col">
                         <div class="card-body">
-                            <h1 class="card-title">{{ wishlist.game.name }}</h1>
-                            <p class="card-text">{{ wishlist.game.price }}</p>
+                            <h2 class="card-title">
+                                <a onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'" style="text-decoration: none; color: white;" href="{% url 'game' wishlist.game.id %}">{{ wishlist.game.name }}</a>
+                            </h2>
+                            <p class="card-text">{{ wishlist.game.price }} руб.</p>
                             <div class="button-container">
-                                <button type="button" class="btn btn-success"><a style="color:white;" href="{% url 'wishlist-add-cart' wishlist.game.id wishlist.id%}">В корзину</a></button>
+                                <button type="button" class="btn btn-success">
+                                    <a style="color:white;" href="{% url 'wishlist-add-cart' wishlist.game.id wishlist.id%}">
+                                        В корзину
+                                    </a>
+                                </button>
                                 <div class="delete-link">
                                     <a href="{% url 'wishlist-delete' wishlist.id %}">Удалить</a>
                                 </div>
@@ -37,7 +56,9 @@
     </div>
 
 {% else %}
-    <h3>Список желаемого пуст</h3>
+    <div style="display: flex; margin: 2rem auto; justify-content: center;">
+        <h3>Список желаемого пуст</h3>
+    </div>
 {% endif %}
 
 {% endblock %}
