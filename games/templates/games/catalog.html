@@ -12,12 +12,12 @@
     <div id="category-container">
 
         <div class="category-div">
-            <h4><a style="color: white; text-decoration: none;" href="{% url 'catalog' %}">Все категории</a></h4>
+            <h4><a onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'" style="color: white; text-decoration: none;" href="{% url 'catalog' %}">Все категории</a></h4>
         </div>
 
         {% for category in categories %}
             <div class="category-div">
-                <h4><a style="color: white; text-decoration: none;" href="{% url 'category' category.id %}" >{{ category.genre }}</a></h4>
+                <h4><a onmouseover="this.style.opacity='0.7'" onmouseout="this.style.opacity='1'" style="color: white; text-decoration: none;" href="{% url 'category' category.id %}" >{{ category.genre }}</a></h4>
             </div>
         {% endfor %}
     </div>
